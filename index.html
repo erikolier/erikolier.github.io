@@ -1,10 +1,69 @@
 <html>
 <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <style>
+                .accordion {
+                    background-color: #eee;
+                    color: #444;
+                    cursor: pointer;
+                    padding: 18px;
+                    width: 100%;
+                    border: none;
+                    text-align: left;
+                    outline: none;
+                    font-size: 15px;
+                    transition: 0.4s;
+                }
+                
+                .active, .accordion:hover {
+                    background-color: #ccc; 
+                }
+                
+                .panel {
+                    padding: 0 18px;
+                    display: none;
+                    background-color: white;
+                    overflow: hidden;
+                }
+                </style>
 </head>
 <body>
-        <img src="img/bogota.jpg" alt="Bogotá" style="width:300px;height:300px;">
-        <img src="img/esteban.jpg" alt="hermano" style="width:300px;height:300px;">
-        <img src="img/grado.jpg" alt="grado" style="width:300px;height:300px;">
+        <button class="accordion">Nacimiento</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <img src="img/bogota.jpg" alt="Bogotá" class="img-thumbnail" style="width:300px;height:300px;" id="1" >
+        </div>
+        
+        <button class="accordion">Hermano y sobrina</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <img src="img/esteban.jpg" alt="hermano"class="img-thumbnail" style="width:300px;height:300px;" id="2" >
+        </div>
+        
+        <button class="accordion">Grado</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <img src="img/grado.jpg" alt="grado" class="img-thumbnail"style="width:300px;height:300px;" id="3" >
+        </div>
+        <script>
+                var acc = document.getElementsByClassName("accordion");
+                var i;
+                
+                for (i = 0; i < acc.length; i++) {
+                    acc[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var panel = this.nextElementSibling;
+                        if (panel.style.display === "block") {
+                            panel.style.display = "none";
+                        } else {
+                            panel.style.display = "block";
+                        }
+                    });
+                }
+                </script>
+    
+       
 </body>
 </html>
